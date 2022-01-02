@@ -1,0 +1,3 @@
+.container {
+  @apply bg-white text-center shadow-md p-10 rounded-xl;
+}
