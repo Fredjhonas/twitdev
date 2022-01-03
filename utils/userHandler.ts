@@ -2,19 +2,25 @@ export interface IUser {
   name: string;
   email: string;
   token: string;
+  photo: string;
 }
 
 const key = "user";
+const localStorage = typeof window !== "undefined" ? window.localStorage : null;
 
 class UserHandler {
   private user: IUser | null;
 
   constructor() {
-    this.user = JSON.parse(localStorage.getItem(key) || "null");
+    this.user = JSON.parse(
+      localStorage !== null ? localStorage.getItem(key) : null
+    );
   }
 
   public notifyLogin(newUser: IUser) {
-    localStorage.setItem(key, JSON.stringify(newUser));
+    localStorage !== null
+      ? localStorage.setItem(key, JSON.stringify(newUser))
+      : null;
     this.user = newUser;
   }
 
@@ -34,7 +40,7 @@ class UserHandler {
   }
 
   public logout() {
-    localStorage.removeItem(key);
+    localStorage !== null ? localStorage.removeItem(key) : null;
     this.user = null;
   }
 }
