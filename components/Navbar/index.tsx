@@ -14,15 +14,12 @@ import NavLink from "@material-tailwind/react/NavLink";
 import Image from "@material-tailwind/react/Image";
 import Button from "@material-tailwind/react/Button";
 
-const NavbarComponent = ({ isLogged, userData }) => {
+const NavbarComponent = ({ isLogged }) => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const [user, setUser] = useState(null);
 
   const logout = () => {
     userService.userLogout();
-    if (userData === null) {
-      window.location.reload();
-    }
   };
 
   useEffect(() => {

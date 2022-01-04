@@ -1,32 +1,13 @@
 import styles from "./AppLayout.module.css";
 import Footer from "../Footer";
 import NavbarComponent from "../Navbar";
-import { createSelector } from "@reduxjs/toolkit";
-import { makeSelectAuth } from "../../pages/selectors";
-import { useAppSelector } from "../../store/hooks";
-import { useEffect, useState } from "react";
-import userHandler from "../../utils/userHandler";
-
-const stateSelector = createSelector(makeSelectAuth, (user) => ({
-  user,
-}));
+import useAuth from "../../customHooks/useAuth";
 
 const AppLayout = ({ children }) => {
-  const isLogged = userHandler.isLogged();
-  const { user } = useAppSelector(stateSelector);
-  const [logged, setLogged] = useState(isLogged);
-
-  useEffect(() => {
-    if (user !== null || isLogged) {
-      setLogged(true);
-    } else {
-      setLogged(false);
-    }
-  }, [user]);
-
+  const logged = useAuth();
   return (
     <>
-      <NavbarComponent isLogged={logged} userData={user} />
+      <NavbarComponent isLogged={logged} />
       <main className={styles.main}>{children}</main>
       <Footer />
     </>
