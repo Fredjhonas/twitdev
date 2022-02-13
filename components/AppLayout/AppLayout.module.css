@@ -1,3 +1,6 @@
 .main {
-  @apply min-h-screen -mt-16 -mb-12 flex justify-center items-center;
+  min-height: calc(100vh - 127px);
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
