@@ -1,10 +1,10 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { useEffect, useState } from "react";
-import { setUser } from "../pages/authSlice";
-import { makeSelectAuth } from "../pages/selectors";
-import { store } from "../store";
-import { useAppSelector } from "../store/hooks";
-import userHandler from "../utils/userHandler";
+import { setUser } from "pages/authSlice";
+import { makeSelectAuth } from "pages/selectors";
+import { store } from "store";
+import { useAppSelector } from "store/hooks";
+import userHandler from "utils/userHandler";
 
 const stateSelector = createSelector(makeSelectAuth, (user) => ({
   user,

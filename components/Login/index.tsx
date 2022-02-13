@@ -1,6 +1,6 @@
 import Button from "@material-tailwind/react/Button";
 import { FaGithub } from "react-icons/fa";
-import userService from "../../services/userService";
+import userService from "services/userService";
 import styles from "./Login.module.css";
 
 const Login = () => {

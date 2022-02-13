@@ -1,4 +1,4 @@
-import useAuth from "../../customHooks/useAuth";
+import useAuth from "customHooks/useAuth";
 import Login from "../Login";
 
 const PrivateRoute = (Component: any) => {

@@ -1,7 +1,7 @@
 import styles from "./AppLayout.module.css";
 import Footer from "../Footer";
 import NavbarComponent from "../Navbar";
-import useAuth from "../../customHooks/useAuth";
+import useAuth from "customHooks/useAuth";
 
 const AppLayout = ({ children }) => {
   const logged = useAuth();

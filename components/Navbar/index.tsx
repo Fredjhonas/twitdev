@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import userHandler from "../../utils/userHandler";
+import userHandler from "utils/userHandler";
 import Link from "next/link";
-import userService from "../../services/userService";
+import userService from "services/userService";
 
 // material
 import Navbar from "@material-tailwind/react/Navbar";
