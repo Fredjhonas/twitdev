@@ -1,4 +1,4 @@
-import { IAuthState } from "../pages/types";
+import { IAuthState } from "../type/types";
 
 export interface IRootState {
   auth: IAuthState;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useState } from "react";
 import userHandler from "utils/userHandler";
 import Link from "next/link";
@@ -32,7 +33,7 @@ const NavbarComponent = ({ isLogged }) => {
   }, [isLogged]);
 
   return (
-    <Navbar className={"h-1/5"} color="lightBlue" navbar>
+    <Navbar className={"h-16 -mt-2"} color="lightBlue" navbar>
       <NavbarContainer>
         <NavbarWrapper>
           <Link href="/">Twitdev</Link>
@@ -46,7 +47,7 @@ const NavbarComponent = ({ isLogged }) => {
         </NavbarWrapper>
         {user !== null && (
           <NavbarCollapse open={openNavbar}>
-            <Nav>
+            <Nav className={"-mt-2"}>
               <NavLink ripple="light">
                 {`Hola ${user?.name}`}
                 <Image

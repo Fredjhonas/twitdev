@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 const timeLine = [
     {
         avatar: 'https://i.etsystatic.com/22530935/r/il/e12dc2/2212316290/il_340x270.2212316290_dso3.jpg',

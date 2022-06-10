@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createSelector } from "@reduxjs/toolkit";
 import { useEffect, useState } from "react";
-import { setUser } from "pages/authSlice";
-import { makeSelectAuth } from "pages/selectors";
+import { setUser } from "auth/authSlice";
+import { makeSelectAuth } from "selector/selectors";
 import { store } from "store";
 import { useAppSelector } from "store/hooks";
 import userHandler from "utils/userHandler";

@@ -1,6 +1,6 @@
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../firebase/client";
-import { setUser } from "../../pages/authSlice";
+import { setUser } from "../../auth/authSlice";
 import { store } from "../../store";
 import userHandler from "../../utils/userHandler";
 
