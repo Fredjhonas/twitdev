@@ -4,6 +4,8 @@ import Image from "next/image";
 import Card from "@material-tailwind/react/Card";
 
 const Timeline = ({ timeLines }) => {
+  console.log('TimesLines', timeLines);
+
   return (
     <section className="lg:p-16 md:p-16">
       <Card className="p-10 shadow-2xl">
