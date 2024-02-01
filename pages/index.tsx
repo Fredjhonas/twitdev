@@ -1,11 +1,13 @@
+'use client'
+
 // import styles from "./Home.module.css";
 import { useState, useEffect } from "react";
 import Timeline from "components/Timeline";
 import PrivateRoute from "components/PrivateRoute";
-import { timeLines } from '../timelines.json'
+import data from '../timelines.json'
 
 const Home = () => {
-  const [timeLine, setTimeline] = useState(timeLines);
+  const [timeLine, setTimeline] = useState(data.timeLines);
 
   // useEffect(() => {
   //   fetch("http://localhost:3000/api/statuses/home_timeline")

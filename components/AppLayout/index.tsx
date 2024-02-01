@@ -6,11 +6,11 @@ import useAuth from "customHooks/useAuth";
 const AppLayout = ({ children }) => {
   const logged = useAuth();
   return (
-    <>
+    <div className={`${styles.layout} 2xl:container`}>
       <NavbarComponent isLogged={logged} />
       <main className={styles.main}>{children}</main>
       <Footer />
-    </>
+      </div>
   );
 };
 

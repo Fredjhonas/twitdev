@@ -4,13 +4,17 @@ import type { AppProps } from "next/app";
 
 import "globals.css";
 import AppLayout from "components/AppLayout";
+import { ThemeProvider } from "@material-tailwind/react";
+
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
+      <ThemeProvider>
       <AppLayout>
         <Component {...pageProps} />
-      </AppLayout>
+        </AppLayout>
+      </ThemeProvider>
     </Provider>
   );
 };
