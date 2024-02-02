@@ -5,22 +5,18 @@ export interface IUser {
   photo: string;
 }
 
-const key = "user";
-const localStorage = typeof window !== "undefined" ? window.localStorage : null;
+const key = 'user';
+const localStorage = typeof window !== 'undefined' ? window.localStorage : null;
 
 class UserHandler {
   private user: IUser | null;
 
   constructor() {
-    this.user = JSON.parse(
-      localStorage !== null ? localStorage.getItem(key) : null
-    );
+    this.user = JSON.parse(localStorage !== null ? localStorage.getItem(key) : null);
   }
 
   public notifyLogin(newUser: IUser) {
-    localStorage !== null
-      ? localStorage.setItem(key, JSON.stringify(newUser))
-      : null;
+    localStorage !== null ? localStorage.setItem(key, JSON.stringify(newUser)) : null;
     this.user = newUser;
   }
 
@@ -36,7 +32,7 @@ class UserHandler {
     if (this.user) {
       return this.user.token;
     }
-    return "";
+    return '';
   }
 
   public logout() {

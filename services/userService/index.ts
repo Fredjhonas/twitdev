@@ -1,18 +1,18 @@
-import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../../firebase/client";
-import { setUser } from "../../auth/authSlice";
-import { store } from "../../store";
-import userHandler from "../../utils/userHandler";
+import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../../firebase/client';
+import { setUser } from '../../auth/authSlice';
+import { store } from '../../store';
+import userHandler from '../../utils/userHandler';
 
 class UserService {
   async userLogin() {
     try {
       const githubProvider = new GithubAuthProvider();
       const response = await signInWithPopup(auth, githubProvider);
-      if (!response) throw new Error("Error login github");
+      if (!response) throw new Error('Error login github');
 
       if (response) {
-        console.log("Github user: ", response.user);
+        console.log('Github user: ', response.user);
         const userResponse = response.user;
         const { displayName, email, refreshToken, photoURL } = userResponse;
 

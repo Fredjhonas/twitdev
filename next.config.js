@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: 'i.etsystatic.com',
-      }
-    ]
-  }
-}
+      },
+    ],
+  },
+};
 
 module.exports = nextConfig;

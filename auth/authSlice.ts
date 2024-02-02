@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IAuthState } from "../type/types";
+import { createSlice } from '@reduxjs/toolkit';
+import { IAuthState } from '../type/types';
 
 const initialState: IAuthState = {
   user: null,
 };
 
 const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState,
   reducers: {
     setUser(state, action) {
