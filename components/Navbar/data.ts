@@ -1,24 +1,24 @@
-import { FaUserCircle, FaUserCog, FaInbox, FaQuestionCircle, FaPowerOff } from "react-icons/fa";
+import { FaUserCircle, FaUserCog, FaInbox, FaQuestionCircle, FaPowerOff } from 'react-icons/fa';
 
 const profileMenuItems = [
   {
-    label: "My Profile",
+    label: 'My Profile',
     icon: FaUserCircle,
   },
   {
-    label: "Edit Profile",
+    label: 'Edit Profile',
     icon: FaUserCog,
   },
   {
-    label: "Inbox",
+    label: 'Inbox',
     icon: FaInbox,
   },
   {
-    label: "Help",
+    label: 'Help',
     icon: FaQuestionCircle,
   },
   {
-    label: "Sign Out",
+    label: 'Sign Out',
     icon: FaPowerOff,
   },
 ];

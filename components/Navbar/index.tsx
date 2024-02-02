@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import userHandler from "utils/userHandler";
-import Link from "next/link";
-import userService from "services/userService";
+import { useEffect, useState } from 'react';
+import userHandler from 'utils/userHandler';
+import Link from 'next/link';
+import userService from 'services/userService';
 
 // material
-import { Navbar, Typography } from "@material-tailwind/react";
-import { ProfileMenu } from "./profile";
-
+import { Navbar, Typography } from '@material-tailwind/react';
+import { ProfileMenu } from './profile';
 
 const NavbarComponent = ({ isLogged }) => {
   const [openNavbar, setOpenNavbar] = useState(false);
@@ -26,18 +25,23 @@ const NavbarComponent = ({ isLogged }) => {
   }, [isLogged]);
 
   return (
-    <Navbar className={"p-4 max-w-full rounded-none"} color="light-blue" placeholder="Navbar">
+    <Navbar className={'p-4 max-w-full rounded-none'} color="light-blue" placeholder="Navbar">
       <div className="flex justify-between items-center">
         <Link href="/">Twitdev</Link>
         <div className="flex items-center gap-4">
           {user !== null && (
-            <Typography color="white" placeholder='user' className="text-md">
-            Hola {user?.name}
+            <Typography color="white" placeholder="user" className="text-md">
+              Hi {user?.name}
             </Typography>
           )}
-        {user !== null && (
-          <ProfileMenu isMenuOpen={openNavbar} setIsMenuOpen={setOpenNavbar} user={user} logout={logout} />
-        )}
+          {user !== null && (
+            <ProfileMenu
+              isMenuOpen={openNavbar}
+              setIsMenuOpen={setOpenNavbar}
+              user={user}
+              logout={logout}
+            />
+          )}
         </div>
       </div>
     </Navbar>
