@@ -1,18 +1,20 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable react/display-name */
 import useAuth from 'customHooks/useAuth';
-import Login from '../Login';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-const PrivateRoute = (Component: any) => {
-  return (props: any) => {
-    const signedIn = useAuth();
+const PrivateRoute = ({ children }) => {
+  const signedIn = useAuth();
+  const router = useRouter();
 
+  useEffect(() => {
     if (!signedIn) {
-      return <Login />;
+      router.push('/login');
+    } else {
+      router.push('/');
     }
+  }, [signedIn]);
 
-    return <Component {...props} />;
-  };
+  return <>{children}</>;
 };
 
 export default PrivateRoute;

@@ -31,8 +31,8 @@ class UserService {
 
   userLogout() {
     try {
-      userHandler.logout();
       store.dispatch(setUser(null));
+      userHandler.logout();
     } catch (error) {
       throw error;
     }
