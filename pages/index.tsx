@@ -1,11 +1,11 @@
 'use client';
 
 // import styles from "./Home.module.css";
-import { useState, useEffect } from 'react';
-import Timeline from 'components/Timeline';
 import PrivateRoute from 'components/PrivateRoute';
-import data from '../timelines.json';
 import ProgressBar from 'components/ProgressBar';
+import Timeline from 'components/Timeline';
+import { useEffect, useState } from 'react';
+import data from '../timelines.json';
 
 const Home = () => {
   const [timeLines, setTimelines] = useState(data.timeLines);
@@ -32,14 +32,14 @@ const Home = () => {
           <ProgressBar loading={loading} />
         </div>
       ) : (
-        <div className="grid grid-cols-4">
-          <div className="col-span-1">
+        <div className="grid lg:grid-cols-4 sm:grid-cols-1">
+          <div className="col-span-1 hidden lg:block">
             <h1 className="text-center mt-2">Home</h1>
           </div>
-          <div className="col-span-2">
+          <div className="lg:col-span-2">
             <Timeline timeLines={timeLines} />
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 hidden lg:block">
             <h1 className="text-center mt-2">Who to follow</h1>
           </div>
         </div>

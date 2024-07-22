@@ -1,41 +1,41 @@
 import { Button } from '@material-tailwind/react';
 import Image from 'next/image';
 import {
-  FaRegHeart,
-  FaRegComment,
-  FaRetweet,
-  FaRegChartBar,
   FaRegBookmark,
+  FaRegChartBar,
+  FaRegComment,
+  FaRegHeart,
+  FaRetweet,
   FaUpload,
 } from 'react-icons/fa';
 
 const Timeline = ({ timeLines }) => {
   return (
-    <div className="border-gray-500 border-l-2 border-r-2">
+    <div className="lg:border-gray-500 lg:border-l-2 lg:border-r-2">
       {timeLines.length > 0 &&
         timeLines.map((timeLine: any, index: number) => {
           const { avatar, username, message } = timeLine;
           const isLast = index === timeLines.length - 1;
           return (
             <div
-              className={`flex p-5 border-gray-500 ${isLast ? 'border-b-0' : 'border-b-2'}`}
+              className={`sm:p-0 lg:p-5 border-gray-500 ${isLast ? 'border-b-0' : 'border-b-2'}`}
               key={index}
             >
-              <div>
+              <div className="flex items-start my-4">
                 <Image
                   src={avatar}
                   layout="fixed"
-                  height={200}
-                  width={200}
+                  height={100}
+                  width={100}
                   className="rounded-full"
                   alt="avatar"
                 />
+                <span className="mt-2">@{username}</span>
               </div>
-              <div>
-                <span>{username}</span>
-                <p>{message}</p>
-                <div className="flex justify-between items-center mt-4">
-                  <div className="flex gap-10">
+              <div className="mt-2">
+                <p className="p-5">{message}</p>
+                <div className="flex flex-wrap justify-between items-center my-4">
+                  <div className="flex gap-5">
                     <Button size="sm" placeholder="comment" variant="text">
                       <FaRegComment size={20} />
                     </Button>

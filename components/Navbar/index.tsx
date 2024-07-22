@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import userHandler from 'utils/userHandler';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import userService from 'services/userService';
+import userHandler from 'utils/userHandler';
 
 // material
 import { Navbar, Typography } from '@material-tailwind/react';
@@ -24,14 +24,16 @@ const NavbarComponent = ({ isLogged }) => {
     }
   }, [isLogged]);
 
+  const firstName = user?.name.split(' ')[0];
+
   return (
     <Navbar className={'p-4 max-w-full rounded-none'} color="light-blue" placeholder="Navbar">
       <div className="flex justify-between items-center">
         <Link href="/">Twitdev</Link>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           {user !== null && (
             <Typography color="white" placeholder="user" className="text-md">
-              Hi {user?.name}
+              Hi {firstName}
             </Typography>
           )}
           {user !== null && (
